@@ -4,6 +4,8 @@ body {
     background: #f4f1ea;
     color: #111;
     text-align: center;
+    font-size: 22px; /* текст стал больше */
+    line-height: 1.6;
 }
 
 .hero {
@@ -14,17 +16,23 @@ body {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 64px; /* крупный заголовок */
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-top: 60px;
 }
 
 .subtitle {
     margin: 20px 0;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .stamp-btn {
-    padding: 15px 40px;
-    font-size: 20px;
+    padding: 18px 50px;
+    font-size: 24px;
     border: 3px solid #8b0000;
     background: transparent;
     color: #8b0000;
@@ -51,7 +59,7 @@ h1 {
 }
 
 .photo-card img {
-    width: 300px;
+    width: 320px;
     transition: 0.4s;
 }
 
@@ -62,20 +70,21 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 300px;
-    margin: 0 auto 60px;
+    gap: 20px;
+    width: 320px;
+    margin: 0 auto 80px;
 }
 
 input, select, textarea {
-    padding: 10px;
+    padding: 12px;
     font-family: 'Special Elite', cursive;
+    font-size: 18px;
     border: 1px solid #333;
     background: white;
 }
 
 button[type="submit"] {
-    padding: 10px;
+    padding: 12px;
     background: black;
     color: white;
     border: none;
