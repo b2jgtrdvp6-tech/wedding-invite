@@ -1,99 +1,185 @@
-body {
-    margin: 0;
-    font-family: 'Courier New', monospace; /* строгий шрифт */
-    background: #f4f1ea;
-    color: #111;
-    text-align: center;
-    font-size: 26px; /* БАЗОВЫЙ РАЗМЕР СТАЛ БОЛЬШЕ */
-    line-height: 1.8;
+body{
+margin:0;
+font-family:'Special Elite','Courier New',monospace;
+background:#efe6d6;
+background-image:url("images/paper.jpg");
+background-size:cover;
+color:#111;
+text-align:center;
+font-size:42px;
+line-height:1.8;
 }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* папка */
+
+.folder{
+position:fixed;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:1200px;
+z-index:999;
 }
 
-h1 {
-    font-size: 80px; /* очень крупный заголовок */
-    letter-spacing: 4px;
-    font-weight: bold;
+.folder-base{
+position:absolute;
+width:720px;
+height:460px;
+background:#c9b48a;
+border:4px solid #7a6846;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
 
-h2 {
-    font-size: 42px;
-    margin-top: 80px;
-    font-weight: bold;
+.folder-cover{
+position:absolute;
+width:720px;
+height:460px;
+background:#d8c69c;
+border:4px solid #7a6846;
+transform-origin:top;
+transition:transform 1.2s;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+cursor:pointer;
 }
 
-.subtitle {
-    margin: 30px 0;
-    font-size: 34px;
+.folder.open .folder-cover{
+transform:rotateX(-140deg);
 }
 
-p {
-    font-size: 30px; /* основной текст крупнее */
+/* текст папки */
+
+.folder-text{
+font-size:48px;
+text-align:center;
 }
 
-.stamp-btn {
-    padding: 22px 60px;
-    font-size: 30px;
-    border: 4px solid #8b0000;
-    background: transparent;
-    color: #8b0000;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
+.open-text{
+font-size:26px;
+margin-top:20px;
 }
 
-.stamp-btn:hover {
-    background: #8b0000;
-    color: white;
+/* печать */
+
+.stamp{
+position:absolute;
+top:160px;
+transform:scale(3) rotate(-20deg);
+border:6px solid #8b0000;
+color:#8b0000;
+font-size:64px;
+padding:20px 40px;
+opacity:0;
+font-weight:bold;
 }
 
-.hidden {
-    display: none;
+.stamp.show{
+animation:stampHit 0.6s forwards;
 }
 
-.photos {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    margin: 60px 0;
+@keyframes stampHit{
+
+0%{
+transform:scale(3) rotate(-20deg);
+opacity:0;
 }
 
-.photo-card img {
-    width: 380px;
-    transition: 0.4s;
+60%{
+transform:scale(0.8) rotate(-20deg);
+opacity:1;
 }
 
-.photo-card img:hover {
-    transform: scale(1.05);
+100%{
+transform:scale(1) rotate(-20deg);
+opacity:0.9;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 400px;
-    margin: 0 auto 100px;
 }
 
-input, select, textarea {
-    padding: 15px;
-    font-family: 'Courier New', monospace;
-    font-size: 22px;
-    border: 2px solid #333;
-    background: white;
+/* основной экран */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-button[type="submit"] {
-    padding: 15px;
-    font-size: 24px;
-    background: black;
-    color: white;
-    border: none;
-    cursor: pointer;
+h1{
+font-size:110px;
+letter-spacing:6px;
+}
+
+.subtitle{
+font-size:56px;
+}
+
+h2{
+font-size:70px;
+margin-top:120px;
+}
+
+p{
+font-size:48px;
+}
+
+/* фото */
+
+.photos{
+display:flex;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
+margin:80px 0;
+}
+
+.photo-card img{
+width:420px;
+transition:0.4s;
+}
+
+.photo-card img:hover{
+transform:scale(1.05);
+}
+
+/* текст приглашения */
+
+.invite-text{
+max-width:900px;
+margin:100px auto;
+font-size:56px;
+}
+
+/* форма */
+
+form{
+display:flex;
+flex-direction:column;
+gap:30px;
+width:520px;
+margin:0 auto 120px;
+}
+
+input,select,textarea{
+padding:20px;
+font-size:32px;
+font-family:'Courier New',monospace;
+border:2px solid #333;
+}
+
+button{
+padding:20px;
+font-size:36px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
 }
