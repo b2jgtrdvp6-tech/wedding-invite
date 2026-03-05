@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личное дело №001</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="audio/prosecutor.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+    <h1>ЛИЧНОЕ ДЕЛО<br>№ 001</h1>
+    <p class="subtitle">Нарушение 42682<br>Преступление любви</p>
+    <button id="openBtn" class="stamp-btn">ОТКРЫТЬ ДЕЛО</button>
+</section>
+
+<section id="content" class="hidden">
+
+    <h2>Фото обвиняемых</h2>
+    <div class="photos">
+        <div class="photo-card">
+            <img src="images/groom.jpg" alt="Жених">
+            <p>Карпенко Дмитрий Андреевич</p>
+        </div>
+        <div class="photo-card">
+            <img src="images/bride.jpg" alt="Невеста">
+            <p>Карпенко Вероника Викторовна</p>
+        </div>
+    </div>
+
+    <h2>Обвиняемые</h2>
+    <p>
+        Карпенко Вероника Викторовна<br>
+        Карпенко Дмитрий Андреевич<br><br>
+        Обвиняются в создании семьи и организации свадебного торжества.
+    </p>
+
+    <h2>Дата операции</h2>
+    <p>14.03.2026</p>
+    <div id="countdown"></div>
+
+    <h2>Место проведения</h2>
+    <p>Бунырево, улица Приокская 15</p>
+
+    <h2>Ход операции</h2>
+    <p>
+        15:00 — Сбор гостей<br>
+        16:00 — Банкет
+    </p>
+
+    <h2>Подтвердите участие в деле</h2>
+
+    <form action="https://formspree.io/f/mdalrkjd" method="POST">
+        <input type="text" name="ФИО" placeholder="ФИО" required>
+
+        <select name="Присутствие" required>
+            <option value="">Подтверждаете присутствие?</option>
+            <option value="Да">Да</option>
+            <option value="Нет">Нет</option>
+        </select>
+
+        <textarea name="Комментарий" placeholder="Комментарий"></textarea>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
