@@ -10,6 +10,27 @@ font-size:42px;
 line-height:1.8;
 }
 
+/* эффект печатной машинки */
+
+.typewriter{
+display:inline-block;
+overflow:hidden;
+border-right:4px solid #111;
+white-space:nowrap;
+animation:typing 4s steps(40,end), blink 1s step-end infinite;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+@keyframes blink{
+0%{border-color:transparent}
+50%{border-color:#111}
+100%{border-color:transparent}
+}
+
 /* папка */
 
 .folder{
@@ -137,13 +158,44 @@ flex-wrap:wrap;
 margin:80px 0;
 }
 
-.photo-card img{
-width:420px;
+/* карточки как старые фото */
+
+.photo-card{
+position:relative;
+background:#f4f1e8;
+padding:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+transform:rotate(-2deg);
 transition:0.4s;
 }
 
-.photo-card img:hover{
-transform:scale(1.05);
+.photo-card:nth-child(even){
+transform:rotate(2deg);
+}
+
+.photo-card:hover{
+transform:rotate(0deg) scale(1.05);
+}
+
+.photo-card img{
+width:420px;
+display:block;
+filter:sepia(30%) contrast(95%) brightness(95%);
+}
+
+/* скрепка */
+
+.photo-card::before{
+content:"";
+position:absolute;
+top:-18px;
+left:20px;
+width:40px;
+height:40px;
+background:url("images/paperclip.png");
+background-size:contain;
+background-repeat:no-repeat;
+transform:rotate(-10deg);
 }
 
 /* текст приглашения */
@@ -183,3 +235,18 @@ cursor:pointer;
 .hidden{
 display:none;
 }
+Теперь в HTML можно использовать:
+Печатная машинка:
+<h1 class="typewriter">СЕКРЕТНОЕ ДОСЬЕ</h1>
+Фото:
+<div class="photos">
+
+<div class="photo-card">
+<img src="images/photo1.jpg">
+</div>
+
+<div class="photo-card">
+<img src="images/photo2.jpg">
+</div>
+
+</div>
