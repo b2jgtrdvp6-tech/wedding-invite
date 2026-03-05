@@ -1,75 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Личное дело №001</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Личное дело №001</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
 <audio id="bgMusic" loop>
-    <source src="audio/prosecutor.mp3" type="audio/mpeg">
+<source src="audio/prosecutor.mp3" type="audio/mpeg">
 </audio>
 
-<section class="hero">
-    <h1>ЛИЧНОЕ ДЕЛО<br>№ 001</h1>
-    <p class="subtitle">Нарушение 42682<br>Преступление любви</p>
-    <button id="openBtn" class="stamp-btn">ОТКРЫТЬ ДЕЛО</button>
+<audio id="stampSound">
+<source src="audio/stamp.mp3" type="audio/mpeg">
+</audio>
+
+<div id="folder" class="folder">
+
+<div class="folder-base"></div>
+
+<div class="folder-cover" id="folderCover">
+
+<div id="secretStamp" class="stamp">СЕКРЕТНО</div>
+
+<div class="folder-text">
+АРХИВНОЕ ДЕЛО №001
+<div class="open-text">НАЖМИТЕ ЧТОБЫ ОТКРЫТЬ</div>
+</div>
+
+</div>
+</div>
+
+<section id="hero" class="hero hidden">
+
+<h1>ЛИЧНОЕ ДЕЛО №001</h1>
+
+<p class="subtitle">
+Нарушение 42682 — преступление любви
+</p>
+
 </section>
 
-<section id="content" class="hidden">
+<section id="content">
 
-    <h2>Фото обвиняемых</h2>
-    <div class="photos">
-        <div class="photo-card">
-            <img src="images/groom.jpg" alt="Жених">
-            <p>Карпенко Дмитрий Андреевич</p>
-        </div>
-        <div class="photo-card">
-            <img src="images/bride.jpg" alt="Невеста">
-            <p>Карпенко Вероника Викторовна</p>
-        </div>
-    </div>
+<div class="invite-text">
+Карпенко Дмитрий Андреевич и Карпенко Вероника Викторовна приглашают вас на семейный ужин в честь их свадьбы
+</div>
 
-    <h2>Обвиняемые</h2>
-    <p>
-        Карпенко Вероника Викторовна<br>
-        Карпенко Дмитрий Андреевич<br><br>
-        Обвиняются в создании семьи и организации свадебного торжества.
-    </p>
+<h2>Фото обвиняемых</h2>
 
-    <h2>Дата операции</h2>
-    <p>14.03.2026</p>
-    <div id="countdown"></div>
+<div class="photos">
 
-    <h2>Место проведения</h2>
-    <p>Бунырево, улица Приокская 15</p>
+<div class="photo-card">
+<img src="images/groom.jpg">
+</div>
 
-    <h2>Ход операции</h2>
-    <p>
-        15:00 — Сбор гостей<br>
-        16:00 — Банкет
-    </p>
+<div class="photo-card">
+<img src="images/bride.jpg">
+</div>
 
-    <h2>Подтвердите участие в деле</h2>
+</div>
 
-    <form action="https://formspree.io/f/mdalrkjd" method="POST">
-        <input type="text" name="ФИО" placeholder="ФИО" required>
+<h2>Дата операции</h2>
 
-        <select name="Присутствие" required>
-            <option value="">Подтверждаете присутствие?</option>
-            <option value="Да">Да</option>
-            <option value="Нет">Нет</option>
-        </select>
+<p>14.03.2026</p>
 
-        <textarea name="Комментарий" placeholder="Комментарий"></textarea>
+<div id="countdown"></div>
 
-        <button type="submit">Отправить</button>
-    </form>
+<h2>Место проведения</h2>
+
+<p>Бунырево, улица Приокская 15</p>
+
+<h2>Ход операции</h2>
+
+<p>
+15:00 — Сбор гостей  
+16:00 — Банкет
+</p>
+
+<h2>Подтвердите участие в деле</h2>
+
+<form action="https://formspree.io/f/mdalrkjd" method="POST">
+
+<input type="text" name="ФИО" placeholder="ФИО" required>
+
+<select name="Присутствие" required>
+<option value="">Подтверждаете присутствие?</option>
+<option value="Да">Да</option>
+<option value="Нет">Нет</option>
+</select>
+
+<textarea name="Комментарий" placeholder="Комментарий"></textarea>
+
+<button type="submit">Отправить</button>
+
+</form>
 
 </section>
 
 <script src="script.js"></script>
+
 </body>
 </html>
